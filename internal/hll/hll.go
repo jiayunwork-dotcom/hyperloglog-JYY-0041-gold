@@ -215,12 +215,6 @@ func (h *HLL) promote() {
 	}
 	dense := make([]uint8, h.m)
 	for index, rho := range h.sparse {
-		if rho == 0 {
-			continue
-		}
-		if index >= h.m {
-			continue
-		}
 		if rho > dense[index] {
 			dense[index] = rho
 		}

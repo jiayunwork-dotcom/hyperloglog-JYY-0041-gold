@@ -100,6 +100,7 @@ func CountZeros(registers []uint8) uint32 {
 func (h *HLL) counters() (zeros uint32, sum float64) {
 	if h.sparse != nil {
 		zeros = h.m - uint32(len(h.sparse))
+		sum = float64(zeros)
 		for _, rho := range h.sparse {
 			sum += math.Ldexp(1, -int(rho))
 		}
